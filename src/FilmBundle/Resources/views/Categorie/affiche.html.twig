@@ -1,0 +1,42 @@
+
+    
+    {# empty Twig template #}
+{%extends "FilmBundle::accueil.html.twig" %}
+{% block body %}
+<h1 >Liste des categories</h1>
+<a href="{{path('ajout_cat_route')}}" >Ajout Categorie</a>
+
+<table width="40%" >
+    <thead>
+        <tr > 
+            <th>Id</th> 
+            <th>Nom </th>
+           
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for act in cats %}
+            <tr>
+                <td>{{act.id}} </td><td>{{act.nom}} </td>
+               
+                <td>
+                    <ul>
+                        <li><a href="{{path('edit_cat_route',{ 'id': act.getId()})}}" >Edit</a>
+                        </li>  
+                        <li>
+                            <a  href="{{path('supp_cat_route',{ 'id': act.getId()})}}" onclick="return confirm('are u sure deleting this category?')">Delete</a>
+
+                        </li>
+                    </ul> 
+
+
+
+                </td>
+            </tr>   
+        {% endfor %}
+    </tbody>
+
+
+</table
+{% endblock %}

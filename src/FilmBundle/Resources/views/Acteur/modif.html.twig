@@ -1,0 +1,39 @@
+{# empty Twig template #}
+
+<form method="post">
+  <table>
+    <caption><h1 align="center">{{msg}}</h1></caption>
+    <thead>
+        <tr>
+            <td> {{form_label(form.nom)}}</td>
+            <td> 
+                {{form_widget(form.nom)}}
+                {{form_errors(form.nom)}}
+            </td>
+        </tr>
+         <tr>
+            <td> {{form_label(form.prenom)}}</td>
+            <td> 
+                {{form_widget(form.prenom)}}
+                {{form_errors(form.prenom)}}
+            </td>
+        </tr>
+         <tr>
+            <td> {{form_label(form.datenaissance)}}</td>
+            <td> 
+                {{form_widget(form.datenaissance)}}
+                {{form_errors(form.datenaissance)}}
+            </td>
+        </tr>
+         <tr>
+            <td> {{form_label(form.sexe)}}</td>
+            <td> 
+                {{form_widget(form.sexe)}}
+                {{form_errors(form.sexe)}}
+            </td>
+        </tr>
+    </thead>
+</table>
+            {{form_rest(form)}}  
+            <input type="submit" value="Modifier Acteur"/>
+</form>

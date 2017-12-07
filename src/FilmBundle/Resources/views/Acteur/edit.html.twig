@@ -1,0 +1,42 @@
+{# empty Twig template #}
+{%extends "FilmBundle::accueil.html.twig" %}
+{% block body %}
+<form method="post">
+    <a href="{{path('affich_act_route')}}" ><h1>Liste Acteurs</h1></a>
+  <table>
+    <caption><h1 align="center"></h1></caption>
+    <thead>
+        <tr>
+            <td> {{form_label(form.nom)}}</td>
+            <td> 
+                {{form_widget(form.nom)}}
+                {{form_errors(form.nom)}}
+            </td>
+        </tr>
+         <tr>
+            <td> {{form_label(form.prenom)}}</td>
+            <td> 
+                {{form_widget(form.prenom)}}
+                {{form_errors(form.prenom)}}
+            </td>
+        </tr>
+         <tr>
+            <td> {{form_label(form.datenaissance)}}</td>
+            <td> 
+                {{form_widget(form.datenaissance)}}
+                {{form_errors(form.datenaissance)}}
+            </td>
+        </tr>
+         <tr>
+            <td> {{form_label(form.sexe)}}</td>
+            <td> 
+                {{form_widget(form.sexe)}}
+                {{form_errors(form.sexe)}}
+            </td>
+        </tr>
+    </thead>
+</table>
+            {{form_rest(form)}}  
+            <input type="submit" value="Ajout Acteur"/>
+</form>
+{% endblock %}

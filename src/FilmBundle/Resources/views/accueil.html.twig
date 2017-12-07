@@ -1,0 +1,88 @@
+
+<html>
+    <head>
+        <title>Gestion Films</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="{{asset('css/main.css')}}" type="text/css" media="all" /> 
+        <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css" media="screen" /> 
+        <script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+        <script type="text/javascript" src="{{asset('js/scripts.js')}}"></script>		
+
+    </head>
+    <body>
+        <div id="page">    
+            <div id="mainheader">
+
+                <div id="log">
+                    <img src="{{asset('images/logo.png')}}" alt="Filmothèque" width="128" height="128" />
+                </div>
+                <ul id="menu">
+                    <li><a href="{{path('home_page')}}">Accueil</a></li>		    
+                    <li><a href="{{path('affich_act_route')}}">Acteurs</a></li>                    
+                    <li><a href="{{path('film_index')}}">Films</a></li>
+                    <li><a href="{{path('affich_cat_route')}}">Categories</a></li>
+                </ul>
+
+            </div>
+
+            <div id="content">
+                <form method="post" action="{{path('film_search')}}">
+                    <input type="text" placeholder="Search.." name="motcle"/>
+                </form>
+                {% block body  %}
+                    <div id="header">
+                        <div class="wrap">
+                            <div id="slide-holder">
+                                <div id="slide-runner">
+                                    <a href=""><img id="slide-img-1" src="{{asset('images/7.jpg')}}" class="slide" alt="" /></a>
+                                    <a href=""><img id="slide-img-2" src="{{asset('images/1.jpg')}}" class="slide" alt="" /></a>
+                                    <a href=""><img id="slide-img-3" src="{{asset('images/2.jpg')}}" class="slide" alt="" /></a>
+                                    <a href=""><img id="slide-img-4" src="{{asset('images/3.jpg')}}" class="slide" alt="" /></a>
+                                    <a href=""><img id="slide-img-5" src="{{asset('images/4.jpg')}}" class="slide" alt="" /></a>
+                                    <a href=""><img id="slide-img-6" src="{{asset('images/5.jpg')}}" class="slide" alt="" /></a>
+                                    <a href=""><img id="slide-img-7" src="{{asset('images/6.jpg')}}" class="slide" alt="" /></a> 
+                                    <div id="slide-controls">
+                                        <p id="slide-client" class="text"><strong>post: </strong><span></span></p>
+                                        <p id="slide-desc" class="text"></p>
+                                        <p id="slide-nav"></p>
+                                    </div>
+                                </div>				
+                                <!--content featured gallery here -->				
+                                <script type="text/javascript">
+                                    if (!window.slider) var slider = {}; slider.data = [{"id":"slide-img-1", "client":"Greys Anatomy", "desc":"TV shows"}, {"id":"slide-img-2", "client":"The Middle", "desc":"TV Shows"}, {"id":"slide-img-3", "client":"Criminal Minds", "desc":"aTV Shows"}, {"id":"slide-img-4", "client":"NCIS", "desc":"TV Shows"}, {"id":"slide-img-5", "client":"Supernatural", "desc":"TV Shows"}, {"id":"slide-img-6", "client":"Bones", "desc":"TV shows"}, {"id":"slide-img-7", "client":"Survivor", "desc":"Reality Show"}];
+                                </script>
+                            </div>
+                        </div>  
+                    </div>
+                {% endblock%}
+
+
+            </div>
+
+            <footer id="footer">                
+                <div class="foot">
+                    <h4>Notre entrepôt</h4>
+                    <p>Adresse : </p>
+                </div>
+
+                <div class="foot">
+                    <h4>Nous contacter</h4>
+                    <p>Tel: XX YYY ZZZ</p>
+                    <p>Fax: XX YYY ZZZ</p>
+                </div>
+
+                <div class="foot">
+                    <h4>Social</h4>   
+                    <p>Facebook: </p>							
+                    <p>Youtube: </p>	
+                </div> 
+
+                <div class="clear"></div>
+                <div class="copright">
+                    <p>&copy; Copyright Felhi 2017</p>
+                </div>
+            </footer>	
+        </div>
+
+    </body>
+</html>
